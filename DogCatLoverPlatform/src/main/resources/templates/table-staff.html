@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html class="loading" lang="en" data-textdirection="ltr" xmlns:th="http://www.thymeleaf.org">
+
+<!-- Mirrored from demos.themeselection.com/chameleon-free-bootstrap-admin-template/html/ltr/tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Oct 2023 05:51:26 GMT -->
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimal-ui">
+    <meta name="description"
+          content="Chameleon Admin is a modern Bootstrap 4 webapp &amp; admin dashboard html template with a large number of components, elegant design, clean and organized code.">
+    <meta name="keywords"
+          content="admin template, Chameleon admin template, dashboard template, gradient admin template, responsive admin template, webapp, eCommerce dashboard, analytic dashboard">
+    <meta name="author" content="ThemeSelect">
+
+    <title>Staff - Pending Blogs</title>
+    <link rel="icon" href="../../images/sm-logo.svg" type="image/gif" sizes="20x20">
+    <link rel="shortcut icon" type="image/x-icon"
+          href="https://demos.themeelection.com/chameleon-free-bootstrap-admin-template/images/ico/favicon.ico">
+    <link href="https://fonts.googleapis.com/css?family=Muli:300,300i,400,400i,600,600i,700,700i%7CComfortaa:300,400,700"
+          rel="stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link th:href="@{../../maxcdn.icons8.com/fonts/line-awesome/1.1/css/line-awesome.min.css}" rel="stylesheet">
+
+    <link rel="stylesheet" type="text/css" th:href="@{../../css/vendors.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../../vendors/css/forms/toggle/switchery.min.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../../css/plugins/forms/switch.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../../css/core/colors/palette-switch.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../../css/app-lite.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../../css/core/menu/menu-types/vertical-menu.css}">
+    <link rel="stylesheet" type="text/css" th:href="@{../../css/core/colors/palette-gradient.css}">
+
+</head>
+<body class="vertical-layout vertical-menu 2-columns   menu-expanded fixed-navbar" data-open="click"
+      data-menu="vertical-menu" data-color="bg-chartbg" data-col="2-columns">
+
+<!-- fixed-top-->
+<nav class="header-navbar navbar-expand-md navbar navbar-with-menu navbar-without-dd-arrow fixed-top navbar-semi-light">
+    <div class="navbar-wrapper">
+        <div class="navbar-container content">
+            <div class="collapse navbar-collapse show" id="navbar-mobile">
+                <ul class="nav navbar-nav mr-auto float-left">
+                    <li class="nav-item d-block d-md-none"><a class="nav-link nav-menu-main menu-toggle hidden-xs"
+                                                              href="#"><i class="ft-menu"></i></a></li>
+
+                    <li class="nav-item dropdown navbar-search"><a class="nav-link dropdown-toggle hide"
+                                                                   data-toggle="dropdown" href="#"><i
+                            class="ficon ft-search"></i></a>
+
+                        <ul class="dropdown-menu">
+                            <li class="arrow_box">
+                                <form>
+                                    <div class="input-group search-box">
+                                        <div class="position-relative has-icon-right full-width">
+                                            <input class="form-control" id="search" type="text"
+                                                   placeholder="Search here...">
+                                            <div class="form-control-position navbar-search-close"><i class="ft-x"> </i>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </form>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+
+
+                <ul class="nav navbar-nav float-right">
+                    <!--Dropdown User-->
+                    <li class="dropdown dropdown-user nav-item"><a class="dropdown-toggle nav-link dropdown-user-link"
+                                                                   href="#" data-toggle="dropdown"> <span
+                            class="avatar avatar-online"><img th:src="@{'../../images/avatar/' + ${user.image}}"
+                                                              alt="avatar"><i></i></span></a>
+                        <div class="dropdown-menu dropdown-menu-right">
+                            <div class="arrow_box_right"><a class="dropdown-item" href="#"><span
+                                    class="avatar avatar-online"><img th:src="@{'../../images/avatar/' + ${user.image}}"
+                                                                      alt="avatar"><span
+                                    class="user-name text-bold-700 ml-1" th:text="${user.userName}"></span></span></a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" th:href="@{/index/profile}"><i class="ft-user"></i> Edit Profile</a>
+                                <div class="dropdown-divider"></div>
+                                <a class="dropdown-item" th:href="@{/index/logout}"><i class="ft-power"></i> Logout</a>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</nav>
+
+
+<div class="main-menu menu-fixed menu-light menu-accordion    menu-shadow " data-scroll-to-active="true"
+     data-img="../../images/backgrounds/02.jpg">
+    <div class="navbar-header">
+        <ul class="nav navbar-nav flex-row justify-content-center" style="background-color: black;">
+            <li class="nav-item" style="margin-top: 20px;"><a th:href="@{/index/home}"><img alt="image"
+                                                                                            class="img-fluid"
+                                                                                            src="../../images/header1-logo.svg"></a>
+            </li>
+        </ul>
+    </div>
+
+    <div class="main-menu-content">
+        <ul class="navigation navigation-main" id="main-menu-navigation" data-menu="menu-navigation">
+            <li class="active"><a th:href="@{/staff/view}"><i class="ft-home"></i><span class="menu-title" data-i18n="">Dashboard</span></a>
+            </li>
+
+            <li class=" nav-item"><a th:href="@{/staff/view/pending}"><i class="ft-credit-card"></i><span class="menu-title" data-i18n="">Pending Blog</span></a>
+            </li>
+
+
+            <li th:if="${user.roleDTO == 'ROLE_ADMIN'}" class=" nav-item"><a th:href="@{/staff/manageStaff}"><i class="ft-users"></i><span class="menu-title" data-i18n="">Staff Manager</span></a>
+
+
+            <li th:if="${user.roleDTO == 'ROLE_ADMIN'}" class="nav-item"><a th:href="@{../../staff/staff-sign-up}"><i class="ft-user"></i><span class="menu-title" >Create Account</span> </a>
+            </li>
+<!--            <li th:if="${user.roleDTO == 'ROLE_ADMIN'}" class="nav-item"><a th:href="@{../../staff/chart}"><i class="ft-pie-chart"></i><span class="menu-title" data-i18n="">Charts</span></a>-->
+
+<!--            </li>-->
+        </ul>
+    </div>
+
+    <div class="navigation-background"></div>
+</div>
+
+<div class="app-content content">
+    <div class="content-wrapper">
+
+            <!-- Table head options start -->
+            <div class="row">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-header">
+                            <h4 class="card-title">Pending Blogs</h4>
+                            <a class="heading-elements-toggle"><i class="la la-ellipsis-v font-medium-3"></i></a>
+                        </div>
+                        <div class="card-content collapse show">
+
+                            <div class="table-responsive">
+                                <table class="table">
+                                    <thead class="thead-dark" style="text-align: center;">
+                                    <tr>
+                                        <th scope="col">Title</th>
+                                        <th scope="col">Image</th>
+                                        <th scope="col">Type</th>
+                                        <th scope="col">Origin</th>
+                                        <th scope="col">Content</th>
+                                        <th scope="col">Price</th>
+                                        <th scope="col">Username</th>
+                                        <th scope="col">BlogType</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                    </thead>
+
+                                    <tbody>
+                                    <tr th:each="blog : ${pendingBlogs}">
+                                        <td th:text="${blog.title}"></td>
+
+
+                                        <td > <img class="img-fluid" style="object-fit: contain" th:src="@{'../../../images/blog/' + ${blog.image}}" alt></td>
+
+
+                                        <td th:if="${blog.petType  != null} " th:text="${blog.petType}"></td>
+                                        <td th:if="${blog.petType  == null} " > Service</td>
+
+                                        <td th:if="${blog.petType  != null} " th:text="${blog.petCategory.breed}"></td>
+                                        <td th:if="${blog.petType  == null} " >None</td>
+
+                                <!-- Blog Content-->
+                                        <td>
+                                            <span th:id="'blogContent-' + ${blog.id}"
+                                                  th:text="${#strings.length(blog.content) > 30 ? blog.content.substring(0, 30) + '...' : blog.content}"></span>
+                                            <span type="button" data-toggle="modal" th:attr="data-target='#exampleModalLong-' + ${blog.id}" style="color: red; font-weight: bold;">Read more</span>
+
+                                            <div class="modal fade" th:id="'exampleModalLong-' + ${blog.id}" tabindex="-1" role="dialog" aria-labelledby="exampleModalLongTitle" aria-hidden="true">
+                                                <div class="modal-dialog" role="document">
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <h5 class="modal-title" style="font-weight: bold; margin-left: 40px;" id="exampleModalLongTitle" th:text="${blog.title}"></h5>
+                                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                                <span aria-hidden="true">&times;</span>
+                                                            </button>
+                                                        </div>
+                                                        <div class="modal-body">
+                                                            <span th:text="${blog.content}"></span>
+                                                        </div>
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </td>
+
+                                        <td th:text="${blog.price} + '$'"></td>
+                                        <td th:text="${blog.userName}"></td>
+
+                                        <td th:if="${blog.blogTypeName  != null} " th:text="${blog.blogTypeName}"></td>
+                                        <td th:if="${blog.blogTypeName  == null} " > Service</td>
+                                        <td>
+                                            <!-- Form for Approve -->
+                                            <form th:action="@{/blog/staff/process}" method="post" th:if="${true}">
+                                                <button class="btn btn-primary" type="submit" name="action" value="approve">Approve</button>
+                                                <input type="hidden" name="blogId" th:value="${blog.id}" />
+                                            </form>
+
+                                            <!-- Form for Reject -->
+                                            <form th:action="@{/blog/staff/process}" method="post" th:if="${true}">
+                                                <button class="btn btn-danger" type="submit" name="action" value="reject">Reject</button>
+                                                <input type="text" name="reason" placeholder="Enter Notification" required />
+                                                <input type="hidden" name="blogId" th:value="${blog.id}" />
+                                            </form>
+                                        </td>
+
+                                    </tr>
+
+                                    </tbody>
+
+                                </table>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Table head options end -->
+
+        </div>
+    </div>
+</div>
+
+
+<div class="customizer border-left-blue-grey border-left-lighten-4 d-none d-xl-block"><a class="customizer-close"
+                                                                                         href="#"><i
+        class="ft-x font-medium-3"></i></a><a class="customizer-toggle bg-primary box-shadow-3" href="#"
+                                              id="customizer-toggle-setting"><i
+        class="ft-settings font-medium-3 spinner white"></i></a>
+    <div class="customizer-content p-2">
+        <h5 class="mt-1 mb-1 text-bold-500">Navbar Color Options</h5>
+        <div class="navbar-color-options clearfix">
+            <div class="gradient-colors mb-1 clearfix">
+                <div class="bg-gradient-x-purple-blue navbar-color-option" data-bg="bg-gradient-x-purple-blue"
+                     title="bg-gradient-x-purple-blue"></div>
+                <div class="bg-gradient-x-purple-red navbar-color-option" data-bg="bg-gradient-x-purple-red"
+                     title="bg-gradient-x-purple-red"></div>
+                <div class="bg-gradient-x-blue-green navbar-color-option" data-bg="bg-gradient-x-blue-green"
+                     title="bg-gradient-x-blue-green"></div>
+                <div class="bg-gradient-x-orange-yellow navbar-color-option" data-bg="bg-gradient-x-orange-yellow"
+                     title="bg-gradient-x-orange-yellow"></div>
+                <div class="bg-gradient-x-blue-cyan navbar-color-option" data-bg="bg-gradient-x-blue-cyan"
+                     title="bg-gradient-x-blue-cyan"></div>
+                <div class="bg-gradient-x-red-pink navbar-color-option" data-bg="bg-gradient-x-red-pink"
+                     title="bg-gradient-x-red-pink"></div>
+            </div>
+            <div class="solid-colors clearfix">
+                <div class="bg-primary navbar-color-option" data-bg="bg-primary" title="primary"></div>
+                <div class="bg-success navbar-color-option" data-bg="bg-success" title="success"></div>
+                <div class="bg-info navbar-color-option" data-bg="bg-info" title="info"></div>
+                <div class="bg-warning navbar-color-option" data-bg="bg-warning" title="warning"></div>
+                <div class="bg-danger navbar-color-option" data-bg="bg-danger" title="danger"></div>
+                <div class="bg-blue navbar-color-option" data-bg="bg-blue" title="blue"></div>
+            </div>
+        </div>
+        <hr>
+        <h5 class="my-1 text-bold-500">Layout Options</h5>
+        <div class="row">
+            <div class="col-12">
+                <div class="d-inline-block custom-control custom-radio col-4">
+                    <input type="radio" class="custom-control-input bg-primary" name="layouts" id="fixed-layout">
+                    <label class="custom-control-label" for="fixed-layout">Fixed</label>
+                </div>
+                <div class="d-inline-block custom-control custom-radio">
+                    <input type="radio" class="custom-control-input bg-primary" name="layouts" id="boxed-layout">
+                    <label class="custom-control-label" for="boxed-layout">Boxed</label>
+                </div>
+            </div>
+        </div>
+        <hr>
+        <h5 class="mt-1 mb-1 text-bold-500">Sidebar menu Background</h5>
+        <div class="row sidebar-color-options ml-0">
+            <label for="sidebar-color-option" class="card-title font-medium-2 mr-2 mb-0">White Mode</label>
+            <div class="text-center mb-0">
+                <input type="checkbox" id="sidebar-color-option" class="switchery" data-size="xs"/>
+            </div>
+            <label for="sidebar-color-option" class="card-title font-medium-2 ml-2 mb-0">Dark Mode</label>
+        </div>
+        <hr>
+        <!--Sidebar Background Image Starts-->
+        <h5 class="mt-1 mb-1 text-bold-500">Sidebar Background Image</h5>
+        <div class="cz-bg-image row">
+            <div class="col mb-2">
+                <img src="../../images/backgrounds/04.jpg" class="rounded sidiebar-bg-img" width="50"
+                     height="100" alt="background image">
+            </div>
+            <div class="col mb-3">
+                <img src="../../images/backgrounds/01.jpg" class="rounded sidiebar-bg-img" width="50"
+                     height="100" alt="background image">
+            </div>
+            <div class="col mb-3">
+                <img src="../../images/backgrounds/02.jpg" class="rounded sidiebar-bg-img" width="50"
+                     height="100" alt="background image">
+            </div>
+            <div class="col mb-3">
+                <img src="../../images/backgrounds/05.jpg" class="rounded sidiebar-bg-img" width="50"
+                     height="100" alt="background image">
+            </div>
+        </div>
+        <!--Sidebar Background Image Ends-->
+        <!--Sidebar BG Image Toggle Starts-->
+        <div class="sidebar-image-visibility">
+            <div class="row ml-0">
+                <label for="toggle-sidebar-bg-img" class="card-title font-medium-2 mr-2 mb-0">Hide Image</label>
+                <div class="text-center mb-0">
+                    <input type="checkbox" id="toggle-sidebar-bg-img" class="switchery" data-size="xs" checked/>
+                </div>
+                <label for="toggle-sidebar-bg-img" class="card-title font-medium-2 ml-2 mb-0">Show Image</label>
+            </div>
+        </div>
+        <!--Sidebar BG Image Toggle Ends-->
+        <hr>
+        <div class="row mb-1">
+            <div class="col-12 text-center">
+                <!-- Place this tag where you want the button to render. -->
+                <a class="github-button" href="https://github.com/themeselect/chameleon-free-bootstrap-admin-template"
+                   data-icon="octicon-star" data-show-count="true"
+                   aria-label="Star themeselect/chameleon-free-bootstrap-admin-template on GitHub">Star</a>
+                <!-- Place this tag where you want the button to render. -->
+                <a class="github-button"
+                   href="https://github.com/themeselect/chameleon-free-bootstrap-admin-template/fork"
+                   data-icon="octicon-repo-forked" data-show-count="true"
+                   aria-label="Fork themeselect/chameleon-free-bootstrap-admin-template on GitHub">Fork</a>
+            </div>
+        </div>
+        <div class="row mb-1">
+            <div class="col">
+                <a href="https://themeselection.com/products/chameleon-admin-free-bootstrap-dashboard-template/"
+                   class="btn btn-info btn-block btn-glow" target="_blank">Download FREE!</a>
+            </div>
+            <div class="col">
+                <a href="https://themeselection.com/" class="btn btn-primary btn-block box-shadow-1" target="_blank">More
+                    Themes</a>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-12 text-center">
+                <button id="twitter" class="btn btn-social-icon btn-twitter sharrre mr-1"><i class="la la-twitter"></i>
+                </button>
+                <button id="facebook" class="btn btn-social-icon btn-facebook sharrre mr-1"><i
+                        class="la la-facebook"></i></button>
+                <button id="google" class="btn btn-social-icon btn-google sharrre"><i class="la la-google"></i></button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<footer class="footer footer-static footer-light navbar-border navbar-shadow">
+    <div class="clearfix blue-grey lighten-2 text-sm-center mb-0 px-2"><span
+            class="float-md-left d-block d-md-inline-block">2023  &copy; Copyright </span>
+        <ul class="list-inline float-md-right d-block d-md-inline-blockd-none d-lg-block mb-0">
+            <li class="list-inline-item"> More themes</li>
+            <li class="list-inline-item">Support</li>
+            <li class="list-inline-item">Purchase</li>
+        </ul>
+    </div>
+</footer>
+
+
+<script src="../vendors/js/vendors.min.js}" type="text/javascript"></script>
+<script src="../vendors/js/forms/toggle/switchery.min.js}" type="text/javascript"></script>
+<script src="../js/scripts/forms/switch.js}" type="text/javascript"></script>
+<script src="../buttons.github.io/buttons.js}" async defer></script>
+<script src="../vendors/js/charts/chartist.min.js}" type="text/javascript"></script>
+<script src="../js/core/app-menu-lite.js}" type="text/javascript"></script>
+<script src="../js/core/app-lite.js}" type="text/javascript"></script>
+<script src="../js/scripts/customizer-lite.js}" type="text/javascript"></script>
+<script src="../vendors/js/jquery.sharrre.js}" type="text/javascript"></script>
+<script src="../js/scripts/pages/dashboard-lite.js}" type="text/javascript"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+
+<!-- Mirrored from demos.themeselection.com/chameleon-free-bootstrap-admin-template/html/ltr/tables.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 07 Oct 2023 05:51:26 GMT -->
+</html>
